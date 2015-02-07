@@ -1,6 +1,14 @@
 canvas {
     display: block;
-    Margin: auto;
+    /*Margin: auto;*/
+    margin-left: 150px;
+    /*margin-top: 100px;
+    margin-bottom: 100px;*/
+    /*margin-left: 50px;*/
     Vertical-align: middle;
     border: 1px solid black;
+}
+
+.placeholder {
+    margin-left: 50%
 }
