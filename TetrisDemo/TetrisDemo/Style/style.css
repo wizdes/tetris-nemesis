@@ -1,14 +1,26 @@
 canvas {
+    Margin: 0 auto;
+    display: inline-block;
+    border: 1px solid black;
+    vertical-align: top
+}
+
+.moredivpositions {
     display: block;
-    /*Margin: auto;*/
-    margin-left: 150px;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    /*this made this go center*/
+    text-align: center
+}
+
+.cloudCanvasPosition {
+    display: inline-block
+}
+
+.cloudCanvasPositionRight {
+    margin-left: 10px;    
     /*margin-top: 100px;
     margin-bottom: 100px;*/
     /*margin-left: 50px;*/
-    Vertical-align: middle;
-    border: 1px solid black;
-}
-
-.placeholder {
-    margin-left: 50%
 }
