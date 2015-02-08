@@ -1,9 +1,13 @@
 var COLS = 10, ROWS = 20;
 var board = [];
+var otherBoard = [];
 var lose;
 var interval;
+var renderInterval;
 var current; // current moving shape
 var currentX, currentY; // position of current shape
+var otherCurrent; // current moving shape
+var otherCurrentX, otherCurrentY; // position of current shape
 var shapes = [
     [ 1, 1, 1, 1 ],
     [ 1, 1, 1, 0,
@@ -55,6 +59,7 @@ function init() {
             board[ y ][ x ] = 0;
         }
     }
+    otherPieceSet = false;
 }
 
 // keep the element moving down, creating new shapes and clearing lines
@@ -71,6 +76,7 @@ function tick() {
             clearInterval(interval);
             clearInterval(renderInterval);
             init();
+            GameEnded();
             createGame();
             return false;
         }
@@ -184,6 +190,7 @@ function newGame() {
     newShape();
     lose = false;
     interval = setInterval( tick, 250 );
+    renderInterval = setInterval(renderAll, 30);
 }
 
 

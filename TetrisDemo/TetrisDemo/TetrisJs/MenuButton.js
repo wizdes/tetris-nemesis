@@ -2,11 +2,12 @@
 var buttonWidth = 100;
 var btnOffsetX = 300/2 - buttonWidth/2;
 var btnOffsetY = 600 / 2 - buttonHeight / 2;
-var renderInterval;
+var label;
 
 function pressHandler(e) {
-    newGame();
-    renderInterval = setInterval(render, 30);
+    tetrisBackend.server.newGameRequest();
+    label.text = "Waiting...";
+    stage.update();
 }
 
 function createButton(text) {
@@ -18,7 +19,7 @@ function createButton(text) {
     btn.name = "shape: " + 1;
     btn.id = 1;
 
-    var label = new createjs.Text(text, "bold 18px Arial", "#444444");
+    label = new createjs.Text(text, "bold 18px Arial", "#444444");
     label.name = "label";
     label.textAlign = "center";
     label.textBaseline = "middle";
