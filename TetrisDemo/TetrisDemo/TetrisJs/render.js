@@ -14,18 +14,18 @@ function drawBlock(canvasRef, x, y, width, height) {
 }
 
 function renderAll() {
-    render(ctx, board, current, currentX, currentY, 300, 600);
+    render(ctx, board, current, currentX, currentY, 300, 600, true);
     if (otherPieceSet) {
-        render(otherCtx, otherBoard, otherCurrent, otherCurrentX, otherCurrentY, 200, 400);
+        render(otherCtx, otherBoard, otherCurrent, otherCurrentX, otherCurrentY, 200, 400, false);
         otherPieceSet = false;
     }
 }
 
 // draws the board and the moving shape
-function render(canvasRef, board, current, currentX, currentY, width, height) {
+function render(canvasRef, board, current, currentX, currentY, width, height, isOriginal) {
     canvasRef.clearRect(0, 0, W, H);
     // send board, current, currentX, currentY
-    if (i > 5) {
+    if (i > 7 && isOriginal) {
         sendBoardInformation(board, current, currentX, currentY);
         i = 0;
     } else {

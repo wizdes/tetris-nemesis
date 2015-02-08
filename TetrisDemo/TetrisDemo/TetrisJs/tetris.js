@@ -96,7 +96,10 @@ function freeze() {
 }
 
 // returns rotates the rotated shape 'current' perpendicularly anticlockwise
-function rotate( current ) {
+function rotate(current) {
+    if (current[0] == 1 && current[1] == 2 && current[4] == 1 && current[5] == 1) {
+        return current;
+    }
     var newCurrent = [];
     for ( var y = 0; y < 4; ++y ) {
         newCurrent[ y ] = [];

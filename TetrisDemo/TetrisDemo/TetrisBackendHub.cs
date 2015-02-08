@@ -17,13 +17,16 @@ namespace TetrisDemo
         public void Send(string cid, string message)
         {
             // validate connectionId is valid
-            if (gameConnectionMapping.ContainsKey(Context.ConnectionId))
+            lock (_object)
             {
-                // send data to endpoint at connectionId
-                var hubcontext = GlobalHost.ConnectionManager.GetHubContext<TetrisBackendHub>();
-                string connectionId = Context.ConnectionId;
+                if (gameConnectionMapping.ContainsKey(Context.ConnectionId))
+                {
+                    // send data to endpoint at connectionId
+                    var hubcontext = GlobalHost.ConnectionManager.GetHubContext<TetrisBackendHub>();
+                    string connectionId = Context.ConnectionId;
 
-                hubcontext.Clients.Client(gameConnectionMapping[connectionId]).receiveMessage(message);
+                    hubcontext.Clients.Client(gameConnectionMapping[connectionId]).receiveMessage(message);
+                }                
             }
         }
 
