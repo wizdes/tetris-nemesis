@@ -1,11 +1,17 @@
 canvas {
-    Margin: 0 auto;
-    display: inline-block;
     border: 1px solid black;
     vertical-align: top
 }
 
+.menuCanvasClass {
+    z-index: 2;
+    position: absolute;
+    text-align: center;
+    background-color : rgba(158, 167, 184, 0.2)
+}
+
 .moredivpositions {
+    z-index: 1;
     display: block;
     margin: auto;
     margin-left: auto;
