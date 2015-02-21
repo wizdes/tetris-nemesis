@@ -1,10 +1,12 @@
-﻿function createGame() {
+﻿var startButton;
+
+function createGame() {
     stage = new createjs.Stage(document.getElementById("canvas"));
     stage.enableMouseOver();
     stage.update();
 
     var canvas = document.getElementById('menuCanvas');
-    var startButton = createButton("START");
+    startButton = createButton("START");
     stage = new createjs.Stage(document.getElementById("menuCanvas"));
 
     stage.addChild(startButton);

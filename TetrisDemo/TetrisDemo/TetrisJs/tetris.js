@@ -188,6 +188,7 @@ function valid( offsetX, offsetY, newCurrent ) {
 }
 
 function newGame() {
+    startButton.visible = false;
     clearInterval(interval);
     init();
     newShape();

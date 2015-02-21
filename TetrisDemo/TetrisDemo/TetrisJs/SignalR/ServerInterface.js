@@ -29,4 +29,5 @@ function sendBoardInformation(board, current, currentX, currentY) {
 
 function GameEnded() {
     tetrisBackend.server.gameEnd();
+    startButton.visible = true;
 }
