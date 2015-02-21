@@ -8,6 +8,9 @@ function pressHandler(e) {
     tetrisBackend.server.newGameRequest();
     label.text = "Waiting...";
     stage.update();
+
+    // add the borders
+    $("canvas").css("border", "1px solid black");
 }
 
 function createButton(text) {
@@ -28,8 +31,8 @@ function createButton(text) {
 
     var button = new createjs.Container();
     button.name = "button";
-    button.x = btnOffsetX;
-    button.y = btnOffsetY;
+    button.x = 300;
+    button.y = 300;
     button.addChild(btn, label);
     button.addEventListener("mousedown", pressHandler);
 

@@ -1,5 +1,5 @@
 canvas {
-    border: 1px solid black;
+    border: 0px solid black;
     vertical-align: top
 }
 
@@ -11,6 +11,8 @@ canvas {
 }
 
 .moredivpositions {
+    min-width: 600px;
+    width:expression(document.body.clientWidth < 600? "600px": "auto" );
     z-index: 1;
     display: block;
     margin: auto;
