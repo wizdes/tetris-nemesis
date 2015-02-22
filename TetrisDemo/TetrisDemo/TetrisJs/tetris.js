@@ -52,13 +52,15 @@ function newShape() {
 }
 
 // clears the board
-function init() {
+function clearBoard() {
     for ( var y = 0; y < ROWS; ++y ) {
         board[ y ] = [];
         for ( var x = 0; x < COLS; ++x ) {
             board[ y ][ x ] = 0;
         }
     }
+
+    ctx.clearRect(0, 0, W, H);
     otherPieceSet = false;
 }
 
@@ -72,10 +74,9 @@ function tick() {
         freeze();
         clearLines();
         if (lose) {
-            ctx.clearRect(0, 0, W, H);
             clearInterval(interval);
             clearInterval(renderInterval);
-            init();
+            clearBoard();
             GameEnded();
             createGame();
             return false;
@@ -189,8 +190,9 @@ function valid( offsetX, offsetY, newCurrent ) {
 
 function newGame() {
     startButton.visible = false;
+    stage.update();
     clearInterval(interval);
-    init();
+    clearBoard();
     newShape();
     lose = false;
     interval = setInterval( tick, 250 );
