@@ -61,6 +61,7 @@ function clearBoard() {
     }
 
     ctx.clearRect(0, 0, W, H);
+    otherCtx.clearRect(0, 0, 200, 400);
     otherPieceSet = false;
 }
 

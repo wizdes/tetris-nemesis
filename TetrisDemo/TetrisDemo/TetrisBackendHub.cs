@@ -69,6 +69,11 @@ namespace TetrisDemo
             {
                 gameConnectionMapping.Remove(Context.ConnectionId);
             }
+
+            if (waitingQueue.Contains(Context.ConnectionId))
+            {
+                waitingQueue.Remove(Context.ConnectionId);
+            }
         }
     }
 }
