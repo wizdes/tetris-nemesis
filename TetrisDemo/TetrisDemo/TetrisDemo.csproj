@@ -110,6 +110,8 @@
     <Content Include="TetrisJs\SignalR\ServerInterface.js" />
     <Content Include="TetrisJs\tetris.js" />
     <Content Include="TetrisMVC\Controller\Controller.js" />
+    <Content Include="TetrisMVC\Controller\KeyController.js" />
+    <Content Include="TetrisMVC\Model\Model.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -118,7 +120,6 @@
     <Compile Include="TetrisBackendHub.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="TetrisMVC\Model\" />
     <Folder Include="TetrisMVC\View\" />
   </ItemGroup>
   <PropertyGroup>

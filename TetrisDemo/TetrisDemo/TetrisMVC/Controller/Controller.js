@@ -1,7 +1,4 @@
-﻿// root class
-// singleton
-
-function controller(typeName) {
+﻿function Controller(typeName) {
     this.typeName = typeName;
 
     this.getTypeInfo = function() {
@@ -11,10 +8,4 @@ function controller(typeName) {
     this.run = function() {
         alert("error");
     }
-}
-
-keyController.prototype = new controller();
-keyController.prototype.constructor = keyController;
-function keyController(typeName) {
-    this.typeName = typeName;
 }
